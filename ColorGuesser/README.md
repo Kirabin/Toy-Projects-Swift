@@ -1,1 +1,3 @@
-<img src="Demo.gif" width="200px">
+## Demo
+
+<img src="Demo.gif" width="300px">
