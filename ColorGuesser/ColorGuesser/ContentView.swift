@@ -17,6 +17,12 @@ struct ContentView: View {
     @State var bGuess: Double = 0.5 // read only value
     @State var showAlert: Bool = false
     
+    func getDifference() -> Int {
+        return Int(abs(rTarget-rGuess) * 255.0 +
+                   abs(gTarget-gGuess) * 255.0 +
+                   abs(bTarget-bGuess) * 255.0)
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -51,7 +57,7 @@ struct ContentView: View {
                 Text("Check")
             })
             .alert(isPresented: $showAlert, content: {
-                        Alert(title: Text("Actual Color"), message: Text("R: \(Int(rTarget * 255.0))\nG: \(Int(gTarget * 255.0))\nB: \(Int(bTarget * 255.0))\n\nDiffernce: \(getscore(rTarget, gTarget, bTarget, rGuess, gGuess, bGuess))"))
+                        Alert(title: Text("Actual Color"), message: Text("R: \(Int(rTarget * 255.0))\nG: \(Int(gTarget * 255.0))\nB: \(Int(bTarget * 255.0))\n\nDiffernce: \(getDifference())"))
             })
             .padding()
             
@@ -77,6 +83,4 @@ struct ColorSlider: View {
 }
 
 
-func getscore(_ r1: Double, _ g1: Double, _ b1: Double, _ r2: Double, _ g2: Double, _ b2: Double) -> Int {
-    return Int(abs(r1-r2)*255.0 + abs(g1-g2)*255.0 + abs(b1-b2)*255.0)
-}
+
