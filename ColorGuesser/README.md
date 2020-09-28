@@ -1,1 +1,3 @@
-![Demo](https://github.com/Kirabin/Toy-Projects-Swift/blob/master/ColorGuesser/Demo.gif)
+## Demo
+
+<img src="Demo.gif" width="300px">
