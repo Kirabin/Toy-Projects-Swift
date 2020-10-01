@@ -8,10 +8,73 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"]
+    @State private var correctAnswer = Int.random(in: 0 ..< 3)
+    
+    @State var scoreTitle = ""
+    @State var showingScore = false
+    @State var answers = 1
+    @State var correctAnswers = 0
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: [Color.red, Color.orange, Color.yellow]), startPoint: .topLeading, endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Text("Tap the flag of \(countries[correctAnswer])")
+                        .font(.title)
+                        .padding()
+                        .foregroundColor(.white)
+                    
+                    ForEach(0 ..< 3, content: { num in
+                        Button(action: {
+                            flagTapped(num)
+                        }, label: {
+                            Image(countries[num])
+                                .clipShape(Capsule())
+                                .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                                .shadow(color: .black, radius: 2)
+                        })
+                        .padding()
+                        .alert(isPresented: $showingScore, content: {
+                            Alert(title: Text(scoreTitle).font(.title),
+                                  message: Text(scoreTitle == "Wrong" ? "You chose flag of \(countries[num])" : ""),
+                                  dismissButton: .default(Text("Next Question")) {
+                                askQuestion()
+                            })
+                        })
+                        
+                    })
+                    Spacer()
+                    Text("Score: \(correctAnswers)")
+                        .font(.title)
+                        .padding()
+                }
+            }
+        }
     }
+    
+    func flagTapped(_ number: Int) {
+        if number == correctAnswer {
+            scoreTitle = "Correct"
+            correctAnswers += 1
+        }
+        else {
+            scoreTitle = "Wrong"
+        }
+
+        showingScore = true
+    }
+    
+    
+    
+    func askQuestion() {
+        answers += 1
+        countries.shuffle()
+        correctAnswer = Int.random(in: 0 ..< 3)
+    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
