@@ -13,7 +13,8 @@ struct ContentView: View {
     
     @State var scoreTitle = ""
     @State var showingScore = false
-    @State var answers = 1
+    @State var choosenFlag = 0
+    @State var answers = 0
     @State var correctAnswers = 0
     
     var body: some View {
@@ -39,7 +40,7 @@ struct ContentView: View {
                         .padding()
                         .alert(isPresented: $showingScore, content: {
                             Alert(title: Text(scoreTitle).font(.title),
-                                  message: Text(scoreTitle == "Wrong" ? "You chose flag of \(countries[num])" : ""),
+                                  message: Text(scoreTitle == "Wrong" ? "You chose flag of \(countries[choosenFlag])" : ""),
                                   dismissButton: .default(Text("Next Question")) {
                                 askQuestion()
                             })
@@ -47,7 +48,7 @@ struct ContentView: View {
                         
                     })
                     Spacer()
-                    Text("Score: \(correctAnswers)")
+                    Text("Score: \(answers != 0 ? Double(correctAnswers) * 100 / Double(answers) : 0, specifier: "%.1f")%")
                         .font(.title)
                         .padding()
                 }
@@ -63,14 +64,15 @@ struct ContentView: View {
         else {
             scoreTitle = "Wrong"
         }
-
+        
+        answers += 1
+        choosenFlag = number
         showingScore = true
     }
     
     
     
     func askQuestion() {
-        answers += 1
         countries.shuffle()
         correctAnswer = Int.random(in: 0 ..< 3)
     }
