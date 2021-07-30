@@ -29,13 +29,15 @@ struct ContentView: View {
                 .multilineTextAlignment(.center)
             // from
             Section {
-                Picker("From", selection: $measure_from, content: {
-                    ForEach(0 ..< measures.count, content: {
-                        Text("\(measures[$0])")
+                VStack {
+                    Picker("From", selection: $measure_from, content: {
+                        ForEach(0 ..< measures.count, content: {
+                            Text("\(measures[$0])")
+                        })
                     })
-                })
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                }
             }
             // to
             Section {
