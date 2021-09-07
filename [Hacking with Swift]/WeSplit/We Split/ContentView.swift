@@ -62,6 +62,7 @@ struct ContentView: View {
                         Text("Amount per person:")
                         Spacer()
                         Text("\(totalPerPerson, specifier: "%.2f")")
+                            .foregroundColor(tipPercentage == 0 ? .red : .primary)
                     }
                 }
             }
