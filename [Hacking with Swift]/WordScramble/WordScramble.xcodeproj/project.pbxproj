@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		527509D226E77AA000B62189 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 527509D126E77AA000B62189 /* start.txt */; };
+		52C06E2526E8C35A001A9E06 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 52C06E2426E8C35A001A9E06 /* start.txt */; };
 		52C1B49F26E4C7B20094177A /* WordScrambleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1B49E26E4C7B20094177A /* WordScrambleApp.swift */; };
 		52C1B4A126E4C7B20094177A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C1B4A026E4C7B20094177A /* ContentView.swift */; };
 		52C1B4A326E4C7B70094177A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C1B4A226E4C7B70094177A /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		527509D126E77AA000B62189 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = start.txt; path = "../../[Materials]/project5-files/start.txt"; sourceTree = "<group>"; };
+		52C06E2426E8C35A001A9E06 /* start.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 		52C1B49B26E4C7B20094177A /* WordScramble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WordScramble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52C1B49E26E4C7B20094177A /* WordScrambleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordScrambleApp.swift; sourceTree = "<group>"; };
 		52C1B4A026E4C7B20094177A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,8 +61,8 @@
 				52C1B4A026E4C7B20094177A /* ContentView.swift */,
 				52C1B4A226E4C7B70094177A /* Assets.xcassets */,
 				52C1B4A726E4C7B70094177A /* Info.plist */,
-				527509D126E77AA000B62189 /* start.txt */,
 				52C1B4A426E4C7B70094177A /* Preview Content */,
+				52C06E2426E8C35A001A9E06 /* start.txt */,
 			);
 			path = WordScramble;
 			sourceTree = "<group>";
@@ -133,9 +133,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52C1B4A626E4C7B70094177A /* Preview Assets.xcassets in Resources */,
-				527509D226E77AA000B62189 /* start.txt in Resources */,
 				52C1B4AE26E5F8220094177A /* data.json in Resources */,
 				52C1B4A326E4C7B70094177A /* Assets.xcassets in Resources */,
+				52C06E2526E8C35A001A9E06 /* start.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
