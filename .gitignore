@@ -1,7 +1,7 @@
 .DS_Store
 Test*/
 test*/
-[Materials]/*
+\[Materials\]/
 ## User settings
 xcuserdata/
 
